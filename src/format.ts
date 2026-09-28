@@ -109,7 +109,7 @@ export function toChineseAmount(amount: unknown): string {
   const jiao = Math.floor(cents / 10)
   const fen = cents % 10
 
-  // 整数部分：按「万」分节，从高位到低位组装
+  // 整数部分：按「万」分节，从高位到低位组装 censStr
   let intStr = ''
   if (integer > 0) {
     const sections: number[] = []
