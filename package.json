@@ -1,0 +1,52 @@
+{
+  "name": "lg-utils-js",
+  "version": "1.0.0",
+  "description": "兼容 Vue2 与 Vue3 的常用校验 / 脱敏工具插件：身份证校验与信息读取、手机号校验、身份证 / 手机号 / 姓名脱敏",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build && npm run minify",
+    "minify": "terser dist/index.js -o dist/index.js --module -c drop_console=true,drop_debugger=true -m && terser dist/index.cjs -o dist/index.cjs -c drop_console=true,drop_debugger=true -m",
+    "test": "vitest",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "keywords": [
+    "vue",
+    "vue2",
+    "vue3",
+    "utils",
+    "idcard",
+    "phone",
+    "mask",
+    "desensitize",
+    "validation",
+    "plugin"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.7.0 || ^3.0.0"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0",
+    "terser": "^5.51.2",
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.0",
+    "vitest": "^1.6.0",
+    "vue": "^3.4.0",
+    "vue-tsc": "^2.0.16"
+  }
+}
